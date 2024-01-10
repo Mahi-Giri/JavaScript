@@ -1,0 +1,29 @@
+[
+    {
+        "First_Name": "Brian",
+        "Last_Name": "Lara",
+        "Age": 27,
+        "Address": {
+            "Street_Address": "22nd Streat",
+            "City": "Los Angeles",
+            "PostalCode": "10331-3200"
+        },
+        "Phone_Number": [
+            "412-543-0987",
+            "222-543-9876"
+        ]
+    },
+    {
+        "First_Name": "William",
+        "Last_Name": "Smith",
+        "Age": 30,
+        "Address": {
+            "Street_Address": "42nd Streat",
+            "City": "New York",
+            "PostalCode": "7262-3100"
+        },
+        "Phone_Number": [
+            "222-666-5678"
+        ]
+    }
+]
