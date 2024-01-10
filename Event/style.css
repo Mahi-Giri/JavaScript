@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.btns {
+    padding: 0.7rem 0.7rem;
+    border-radius: 1rem;
+}
+
+
+.box {
+    height: 250px;
+    width: 250px;
+    background-color: #91eded;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.box p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,22 @@
+/* div {
+    font-size: 500%;
+    background-color: aqua;
+    display: inline;
+    color: red;
+}
+
+script {
+    font-size: 500%;
+    background-color: aqua;
+    display: inline;
+    color: red;
+} */
+
+.custom-element {
+    font-size: 500%;
+    background-color: aqua;
+    display: inline;
+    color: red;
+}
+
+
