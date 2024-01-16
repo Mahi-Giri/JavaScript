@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+}
+
+.container{
+    margin: 0 auto;
+    margin-top: 15rem;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: #fff6f6;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#heading{
+    font-size: 3.5rem;
+}
+
+#description{
+    font-size: 5rem;
+}
+
+#guess-input{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 1.2rem;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+#result{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#score{
+    font-size: 1.4rem;
+}
+
+#restart-btn{
+    display: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
