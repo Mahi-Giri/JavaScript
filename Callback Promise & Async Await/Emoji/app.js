@@ -33,28 +33,39 @@ function displayEmoji() {
     description.textContent = EmojiDetails[currIndex].emoji;
 }
 
-displayEmoji();
-
 function checkGuess() {
     const guess = guess_input.value.trim().toLowerCase();
     const correctEmoji = EmojiDetails[currIndex].description.trim().toLowerCase();
 
     if (guess == correctEmoji) {
-        score++;
-        guess_input.value = '';
         result.textContent = 'Correct!';
-        currIndex++;
-        displayEmoji();
+        score++;
     } else {
-        guess_input.value = '';
         result.textContent = 'Wrong!';
-        currIndex++;
-        displayEmoji();
     }
 
-    if (currIndex == EmojiDetails.length) {
-        // clearInterval(timer);
-        result.textContent = 'You Win!';
-    }
     score_div.textContent = `Score: ${score}/${EmojiDetails.length}`;
+    guess_input.value = '';
+    guess_input.focus();
+    nextEmoji();
 }
+
+function nextEmoji() {
+    currIndex++;
+
+    if (currIndex === EmojiDetails.length) {
+        currIndex = 0;
+    }
+
+    displayEmoji();
+}
+
+guess_input.addEventListener('keyup', (event) =>{
+    if (event.key == 'Enter') {
+        checkGuess();
+    }
+});
+
+document.addEventListener('DOMContentLoaded',() =>{
+    displayEmoji();
+});
