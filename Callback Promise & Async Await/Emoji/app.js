@@ -24,13 +24,15 @@ const EmojiDetails = [
 const guess_input = document.querySelector('#guess-input');
 const result = document.querySelector('#result');
 const score_div = document.querySelector('#score');
+const description = document.querySelector('#description');
 
 let currIndex = 0;
 let score = 0;
+let sec = 30;
 
 function displayEmoji() {
-    const description = document.querySelector('#description');
     description.textContent = EmojiDetails[currIndex].emoji;
+    document.querySelector('.timer').textContent = `Remaining Game Time: ${sec}`;
 }
 
 function checkGuess() {
@@ -60,12 +62,28 @@ function nextEmoji() {
     displayEmoji();
 }
 
-guess_input.addEventListener('keyup', (event) =>{
+guess_input.addEventListener('keyup', (event) => {
     if (event.key == 'Enter') {
         checkGuess();
     }
 });
 
-document.addEventListener('DOMContentLoaded',() =>{
+document.addEventListener('DOMContentLoaded', () => {
     displayEmoji();
+    timer();
 });
+function timer() {
+    const timer = setInterval(() => {
+        sec--;
+        document.querySelector('.timer').textContent = `Remaining Game Time: ${sec}`;
+
+        if (sec <= 0) {
+            document.querySelector('#heading').textContent = `Game Over`;
+            score_div.textContent = `Your Score: ${score}`
+            description.style.display = 'none';
+            result.style.display = 'none';
+            guess_input.style.display = 'none';
+            clearInterval(timer);
+        };
+    }, 1000);
+}
