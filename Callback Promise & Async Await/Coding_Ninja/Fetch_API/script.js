@@ -1,19 +1,29 @@
 const card_container = document.querySelector(".card-container");
 
-function getCard(id) {
-    fetch(`https://dummyjson.com/users/${id}`)
-        .then((responce) => {
-            if (!responce.ok) {
-                throw new Error("Couldn't find user");
-            }
-            return responce.json();
-        })
-        .then((user) => {
-            displayUser(user);
-        })
-        .catch((err) => {
-            console.error(err);
-        });
+async function getCard(id) {
+    // Using Promise Chaining
+    // fetch(`https://dummyjson.com/users/${id}`)
+    //     .then((responce) => {
+    //         if (!responce.ok) {
+    //             throw new Error("Couldn't find user");
+    //         }
+    //         return responce.json();
+    //     })
+    //     .then((user) => {
+    //         displayUser(user);
+    //     })
+    //     .catch((err) => {
+    //         console.error(err);
+    //     });
+
+    // Using async await
+    try {
+        const promise = await fetch(`https://dummyjson.com/users/${id}`);
+        const user = await promise.json();
+        displayUser(user);
+    } catch (error) {
+        console.error("Couldn't find user", error);
+    }
 }
 
 function displayUser(data) {
